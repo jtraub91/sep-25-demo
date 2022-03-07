@@ -73,5 +73,5 @@ def present(
         allow_uid_change=allow_uid_change,
         allow_gid_change=allow_gid_change,
     )
-    __context__[register] = ret["changes"]["uid"]
+    __context__[register] = ret["changes"].get("uid")
     return ret

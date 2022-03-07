@@ -40,9 +40,7 @@ def managed(
     use_etag=False,
     **kwargs
 ):
-    registered_contents = __context__.get("contents")
-    if registered_contents:
-        contents = registered_contents
+    contents = __context__.get(contents, contents)
     ret = __states__["file.managed"](
         name,
         source=source,
